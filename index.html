@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick the Right Last Day - Optimize Your Resignation Timing</title>
+    <meta name="description" content="Calculate the optimal last working day to maximize your benefits when resigning from your job.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>📅 Pick the Right Last Day</h1>
+                <p class="tagline">Optimize your resignation timing to maximize benefits</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <form id="resignation-form" class="form">
+                <div class="form-section">
+                    <h2>🌍 Location & Policies</h2>
+                    
+                    <div class="input-group">
+                        <label for="country">Working Country</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select your country</option>
+                            <option value="hong-kong" selected>🇭🇰 Hong Kong</option>
+                            <option value="more-soon" disabled>More countries coming soon...</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="notice-period">Notice Period</label>
+                        <div class="input-row">
+                            <input type="number" id="notice-period" name="notice-period" min="1" max="12" required placeholder="e.g., 2" value="2" style="flex: 2;">
+                            <select id="notice-period-unit" name="notice-period-unit" required style="flex: 1;">
+                                <option value="days">Days</option>
+                                <option value="months" selected>Months</option>
+                            </select>
+                        </div>
+                        <small>How much notice you need to give (e.g., "1 month" or "30 days")</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="notice-period-type">Notice Period Calculation Method</label>
+                        <select id="notice-period-type" name="notice-period-type" required>
+                            <option value="calendar" selected>📅 Calendar Days (includes weekends & holidays)</option>
+                            <option value="working">💼 Working Days (excludes weekends & holidays)</option>
+                        </select>
+                        <small>How your contract defines the notice period - check your employment agreement</small>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>🏖️ Annual Leave Details</h2>
+                    
+                    <div class="input-group">
+                        <label for="annual-leave-total">Total Annual Leave (days per year)</label>
+                        <input type="number" id="annual-leave-total" name="annual-leave-total" min="0" max="50" required placeholder="e.g., 20" value="20">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="annual-leave-remaining">Annual Leave Remaining (as of resignation date)</label>
+                        <input type="number" id="annual-leave-remaining" name="annual-leave-remaining" min="0" step="0.1" required placeholder="e.g., 8.7" value="8.7">
+                        <small>How many AL days you'll have left on your planned resignation date (decimals allowed)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="leave-year-start">Leave Year Start Date</label>
+                        <input type="date" id="leave-year-start" name="leave-year-start" required pattern="\d{4}-\d{2}-\d{2}">
+                        <small>When does your annual leave year begin? (Format: YYYY-MM-DD)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="leave-policy">Leave Policy</label>
+                        <select id="leave-policy" name="leave-policy" required>
+                            <option value="">Select policy</option>
+                            <option value="payout" selected>💰 Unused leave gets paid out</option>
+                            <option value="forfeit">❌ Use it or lose it</option>
+                            <option value="partial">📝 Partial payout (pro-rata)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>📅 Timing Preferences</h2>
+                    
+                    <div class="input-group">
+                        <label for="desired-resignation-date">Planned Resignation Date</label>
+                        <input type="date" id="desired-resignation-date" name="desired-resignation-date" required pattern="\d{4}-\d{2}-\d{2}">
+                        <small>When do you want to submit your resignation? (Format: YYYY-MM-DD)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="salary-cycle">Salary Payment Cycle</label>
+                        <select id="salary-cycle" name="salary-cycle" required>
+                            <option value="">Select cycle</option>
+                            <option value="monthly" selected>📅 Monthly (end of month)</option>
+                            <option value="bi-weekly">📅 Bi-weekly</option>
+                            <option value="weekly">📅 Weekly</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    ✨ Calculate My Optimal Last Day
+                </button>
+            </form>
+
+            <div id="results" class="results hidden">
+                <div class="results-header">
+                    <h2>🎯 Your Optimal Resignation Strategy</h2>
+                </div>
+                <div id="results-content" class="results-content">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>💡 This tool provides guidance based on general employment practices. Always consult with HR or legal professionals for your specific situation.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
