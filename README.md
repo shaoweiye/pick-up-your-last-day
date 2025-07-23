@@ -80,30 +80,6 @@ Then open: `http://localhost:8000`
 
 Simply double-click `index.html` in your file browser. The website will open in your default browser.
 
-## 🚀 Deployment Options
-
-### Free Hosting (Recommended for sharing)
-
-#### GitHub Pages
-1. Create a GitHub repository
-2. Upload all project files
-3. Go to Settings → Pages → Deploy from main branch
-4. Your site will be live at: `https://yourusername.github.io/pick-last-day`
-
-#### Netlify
-1. Go to [netlify.com](https://netlify.com)
-2. Drag and drop the project folder
-3. Get instant URL like: `https://random-name.netlify.app`
-
-#### Vercel
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Auto-deploy with custom domain support
-
-### Custom Domain (Optional)
-- Buy domain: `picktherightlastday.com` (~$10-15/year)
-- Connect to any hosting platform above
-- More professional for sharing
 
 ## 🔧 Technical Details
 
